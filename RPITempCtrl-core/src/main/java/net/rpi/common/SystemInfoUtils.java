@@ -19,7 +19,7 @@ public class SystemInfoUtils {
     public static SystemInfoEntity getDefault(){
         return DEFAULT;
     }
-    public void refresh(){
+    public static void refresh(){
         DEFAULT.setTemperature(getTemperature());
     }
 }

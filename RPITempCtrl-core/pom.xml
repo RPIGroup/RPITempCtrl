@@ -9,7 +9,7 @@
 
   <artifactId>RPITempCtrl-core</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>jar</packaging>
+  <!--<packaging>jar</packaging>-->
 
   <name>RPITempCtrl-core</name>
   <url>http://maven.apache.org</url>
@@ -21,6 +21,8 @@
     <jdk.version>1.6</jdk.version>
 
     <junit.version>4.12</junit.version>
+    <pi4j-version>1.1</pi4j-version>
+    <log4j-version>1.2.15</log4j-version>
   </properties>
 
   <dependencies>
@@ -28,13 +30,13 @@
     <dependency>
       <groupId>com.pi4j</groupId>
       <artifactId>pi4j-core</artifactId>
-      <version>1.1</version>
+      <version>${pi4j-version}</version>
     </dependency>
 
     <dependency>
       <groupId>log4j</groupId>
       <artifactId>log4j</artifactId>
-      <version>1.2.15</version>
+      <version>${log4j-version}</version>
     </dependency>
       <dependency>
           <groupId>org.slf4j</groupId>
@@ -43,80 +45,70 @@
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
-      <version>4.12</version>
+      <version>${junit.version}</version>
       <scope>test</scope>
     </dependency>
 
 
   </dependencies>
 
-  <repositories>
-    <repository>
-      <id>oss-snapshots-repo</id>
-      <name>Sonatype OSS Maven Repository</name>
-      <url>https://oss.sonatype.org/content/groups/public</url>
-      <snapshots>
-        <enabled>true</enabled>
-        <updatePolicy>always</updatePolicy>
-      </snapshots>
-    </repository>
-  </repositories>
 
-  <build>
-    <defaultGoal>compile</defaultGoal>
-    <resources>
-      <resource>
-        <directory>src/main/java</directory>
-        <includes>
-          <include>**/*.xml</include>
-        </includes>
-      </resource>
-      <resource>
-        <directory>src/main/resources</directory>
-        <includes>
-          <include>**/*.*</include>
-        </includes>
-      </resource>
-    </resources>
-    <plugins>
 
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-resources-plugin</artifactId>
-        <version>2.6</version>
-        <configuration>
-          <encoding>UTF-8</encoding>
-        </configuration>
-      </plugin>
+  <!--<build>-->
+    <!--<defaultGoal>compile</defaultGoal>-->
+    <!--<resources>-->
+      <!--<resource>-->
+        <!--<directory>src/main/java</directory>-->
+        <!--<includes>-->
+          <!--<include>**/*.xml</include>-->
+        <!--</includes>-->
+      <!--</resource>-->
+      <!--<resource>-->
+        <!--<directory>src/main/resources</directory>-->
+        <!--<includes>-->
+          <!--<include>**/*.*</include>-->
+        <!--</includes>-->
+      <!--</resource>-->
+    <!--</resources>-->
+    <!--<plugins>-->
 
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-compiler-plugin</artifactId>
-        <version>3.1</version>
-        <configuration>
-          <source>${jdk.version}</source>
-          <target>${jdk.version}</target>
-          <encoding>UTF-8</encoding>
-          <showWarnings>true</showWarnings>
-        </configuration>
-      </plugin>
+      <!--<plugin>-->
+        <!--<groupId>org.apache.maven.plugins</groupId>-->
+        <!--<artifactId>maven-resources-plugin</artifactId>-->
+        <!--<version>2.6</version>-->
+        <!--<configuration>-->
+          <!--<encoding>UTF-8</encoding>-->
+        <!--</configuration>-->
+      <!--</plugin>-->
 
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-jar-plugin</artifactId>
-        <configuration>
-          <archive>
-            <manifest>
-              <addClasspath>true</addClasspath>
-              <classpathPrefix>lib/</classpathPrefix>
-              <mainClass>net.rpi.App</mainClass>
-            </manifest>
-          </archive>
+      <!--<plugin>-->
+        <!--<groupId>org.apache.maven.plugins</groupId>-->
+        <!--<artifactId>maven-compiler-plugin</artifactId>-->
+        <!--<version>3.1</version>-->
+        <!--<configuration>-->
+          <!--<source>${jdk.version}</source>-->
+          <!--<target>${jdk.version}</target>-->
+          <!--<encoding>UTF-8</encoding>-->
+          <!--<showWarnings>true</showWarnings>-->
+        <!--</configuration>-->
+      <!--</plugin>-->
 
-        </configuration>
+      <!--<plugin>-->
+        <!--<groupId>org.apache.maven.plugins</groupId>-->
+        <!--<artifactId>maven-jar-plugin</artifactId>-->
+        <!--<configuration>-->
+          <!--<archive>-->
+            <!--<manifest>-->
+              <!--<addClasspath>true</addClasspath>-->
+              <!--<classpathPrefix>lib/</classpathPrefix>-->
+              <!--<mainClass>net.rpi.App</mainClass>-->
+            <!--</manifest>-->
+          <!--</archive>-->
 
-      </plugin>
+        <!--</configuration>-->
 
-    </plugins>
-  </build>
+      <!--</plugin>-->
+
+    <!--</plugins>-->
+  <!--</build>-->
 </project>

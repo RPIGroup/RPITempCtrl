@@ -7,7 +7,8 @@
 		<version>1.0-SNAPSHOT</version>
 	</parent>
 	<artifactId>RPITempCtrl-web</artifactId>
-
+	<version>1.0-SNAPSHOT</version>
+    <packaging>jar</packaging>
 	<dependencies>
 		<dependency>
 			<groupId>net.rpi</groupId>
