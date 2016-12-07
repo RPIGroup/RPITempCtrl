@@ -1,9 +1,9 @@
-package net.rpi;
+package net.rpi.entity;
 
 /**
  * Created by maobaolong on 2016/12/6.
  */
-public class SystemInfo {
+public class SystemInfoEntity {
     /*温度*/
     private int temperature ;
 
