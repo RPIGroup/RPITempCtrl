@@ -5,7 +5,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-
-<h1>temperature: ${systemInfoEntity}.temperature</h1>
+Velocity模板 hello
+<h1>${host}</h1>
 </body>
 </html>

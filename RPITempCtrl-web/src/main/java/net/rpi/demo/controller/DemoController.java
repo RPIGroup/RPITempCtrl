@@ -1,9 +1,10 @@
 package net.rpi.demo.controller;
 
+import net.rpi.common.SystemInfoUtils;
+import net.rpi.entity.SystemInfoEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.ResponseBody;
 
 /**
  * 登录 <br>
@@ -17,16 +18,19 @@ import org.springframework.web.bind.annotation.ResponseBody;
  * @version 1.0.0
  */
 @Controller
+@RequestMapping("/")
 public class DemoController {
 
 	@RequestMapping("/hello")
-	@ResponseBody
 	public String index() {
-		return "Hello World";
+		return "hello";
 	}
-
-	@RequestMapping("/index")
+//txt html  htm
+	@RequestMapping("/index.html")
 	public String index(ModelMap map) {
+		SystemInfoUtils.refresh();
+		SystemInfoEntity systemInfoEntity = SystemInfoUtils.getDefault();
+		map.put("systemInfoEntity",systemInfoEntity);
 		return "index";
 	}
 
