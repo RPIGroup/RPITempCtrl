@@ -3,15 +3,14 @@ package net.rpi.task;
 
 import net.rpi.common.FanCtrlUtils;
 import net.rpi.common.SystemInfoUtils;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.Logger;
 
 /**
  * Created by mbl on 16-12-6.
  */
 
 public class MonitorTask extends Thread{
-    private static final Log logger = LogFactory.getLog(MonitorTask.class);
+    private static final Logger logger = Logger.getLogger(MonitorTask.class);
     boolean isCancel = false;
 
     @Override

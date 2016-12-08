@@ -1,8 +1,7 @@
 package net.rpi;
 
 import net.rpi.task.MonitorTask;
-import org.apache.commons.logging.Log;
-import org.apache.commons.logging.LogFactory;
+import org.apache.log4j.Logger;
 
 import java.io.IOException;
 
@@ -13,7 +12,7 @@ import java.io.IOException;
 public class App
 {
 
-    private static final Log logger = LogFactory.getLog(App.class);
+    private static final Logger logger = Logger.getLogger(App.class);
 
 
     public static void main( String[] args ) throws IOException {
