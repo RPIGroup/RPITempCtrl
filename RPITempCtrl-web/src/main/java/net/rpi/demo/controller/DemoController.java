@@ -1,6 +1,5 @@
 package net.rpi.demo.controller;
 
-import net.rpi.common.SystemInfoUtils;
 import net.rpi.entity.SystemInfoEntity;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
@@ -28,8 +27,9 @@ public class DemoController {
 //txt html  htm
 	@RequestMapping("/index.html")
 	public String index(ModelMap map) {
-		SystemInfoUtils.refresh();
-		SystemInfoEntity systemInfoEntity = SystemInfoUtils.getDefault();
+//		SystemInfoUtils.refresh();
+		SystemInfoEntity systemInfoEntity = new SystemInfoEntity();//SystemInfoUtils.getDefault();
+		systemInfoEntity.setTemperature(4512);
 		map.put("systemInfoEntity",systemInfoEntity);
 		return "index";
 	}

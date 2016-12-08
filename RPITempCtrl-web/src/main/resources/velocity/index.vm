@@ -6,6 +6,6 @@
 </head>
 <body>
 
-<h1>temperature: ${systemInfoEntity}.temperature</h1>
+<h1>temperature: ${systemInfoEntity.temperature}</h1>
 </body>
 </html>
