@@ -18,7 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
  * @version 1.0.0
  */
 @Controller
-@RequestMapping("/")
+@RequestMapping("/rpitempctrl")
 public class DemoController {
 
 	@RequestMapping("/hello")
@@ -26,7 +26,7 @@ public class DemoController {
 		return "hello";
 	}
 //txt html  htm
-	@RequestMapping("/index.html")
+	@RequestMapping("/index.jsp")
 	public String index(ModelMap map) {
 		SystemInfoUtils.refresh();
 //		SystemInfoEntity systemInfoEntity = new SystemInfoEntity();
