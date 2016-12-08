@@ -12,8 +12,8 @@ public class SystemInfoUtils {
      * 获取温度
      * */
     public static int getTemperature(){
-        String content = FileUtils.readFile("/sys/class/thermal/thermal_zone0/temp");
-        return Integer.parseInt(content);
+        int content = FileUtils.readInt("/sys/class/thermal/thermal_zone0/temp");
+        return content;
     }
 
     public static SystemInfoEntity getDefault(){

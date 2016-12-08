@@ -17,19 +17,7 @@
 
 package net.rpi.common;
 
-import java.io.BufferedReader;
-import java.io.ByteArrayOutputStream;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
-import java.io.FileWriter;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.InputStreamReader;
-import java.io.OutputStream;
-import java.io.PrintWriter;
-import java.io.RandomAccessFile;
+import java.io.*;
 import java.net.URL;
 import java.nio.charset.Charset;
 
@@ -516,6 +504,29 @@ public class FileUtils {
             e.printStackTrace();
         }
         return buf.toString();
+    }
+    public static int readInt(String strFileName){
+        File cpuTempFile = new File(strFileName);
+        BufferedInputStream bis= null;
+        try {
+            bis = new BufferedInputStream(new FileInputStream(cpuTempFile));
+            DataInputStream in = new DataInputStream(bis);
+            int temp = in.readInt();
+            return temp;
+        } catch (FileNotFoundException e) {
+            e.printStackTrace();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }finally {
+            if(bis!=null) {
+                try {
+                    bis.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return 0;
     }
     public static void visitFile(String folder,IVisitor visitor){
         File f = new File(folder);
