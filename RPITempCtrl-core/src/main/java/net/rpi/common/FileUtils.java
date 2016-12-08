@@ -505,28 +505,28 @@ public class FileUtils {
         }
         return buf.toString();
     }
-    public static int readInt(String strFileName){
-        File cpuTempFile = new File(strFileName);
-        BufferedInputStream bis= null;
+    public static String readLine(String strFileName){
+        FileReader fr = null;
+        BufferedReader bf = null;
         try {
-            bis = new BufferedInputStream(new FileInputStream(cpuTempFile));
-            DataInputStream in = new DataInputStream(bis);
-            int temp = in.readInt();
-            return temp;
+            fr = new FileReader(strFileName);
+            bf = new BufferedReader(fr);
+            return bf.readLine();
         } catch (FileNotFoundException e) {
             e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }finally {
-            if(bis!=null) {
+            if(fr!=null) {
                 try {
-                    bis.close();
+                    fr.close();
+                    bf.close();
                 } catch (IOException e) {
                     e.printStackTrace();
                 }
             }
         }
-        return 0;
+        return "0";
     }
     public static void visitFile(String folder,IVisitor visitor){
         File f = new File(folder);
