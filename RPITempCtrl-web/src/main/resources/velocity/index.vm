@@ -2,10 +2,11 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>RPITempCtrl-web</title>
 </head>
 <body>
 
 <h1>temperature: ${systemInfoEntity.temperature}</h1>
+<h1>pid: ${systemInfoEntity.pid}</h1>
 </body>
 </html>
