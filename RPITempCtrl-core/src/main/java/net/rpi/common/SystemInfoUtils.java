@@ -7,13 +7,14 @@ import net.rpi.entity.SystemInfoEntity;
  * 获取系统信息
  */
 public class SystemInfoUtils {
+    private static final String TEMP_FILE_PATH = "/sys/class/thermal/thermal_zone0/temp";
     private static SystemInfoEntity DEFAULT = new SystemInfoEntity();
     /**
      * 获取温度
      * */
     public static int getTemperature(){
-        int content = FileUtils.readInt("/sys/class/thermal/thermal_zone0/temp");
-        return content;
+        String content = FileUtils.readLine(TEMP_FILE_PATH);
+        return Integer.parseInt(content);
     }
 
     public static SystemInfoEntity getDefault(){
